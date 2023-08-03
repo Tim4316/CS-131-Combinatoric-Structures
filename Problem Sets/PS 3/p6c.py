@@ -1,0 +1,1 @@
+(a1 and b1) and not(a0 and b0)

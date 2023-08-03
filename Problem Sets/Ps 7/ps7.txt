@@ -1,0 +1,37 @@
+#problem 5 (Source Consulted: Friend)
+
+def are_parts_nonoverlapping(p):
+    for x in p[0]:
+        for y in p[-1]:
+            if x != y:
+                return True
+    return False
+
+def do_parts_contain_element(x, p):
+    for c in p[0]:
+        for d in p[-1]:
+            if x == d or x == c:
+                return True
+    return False
+
+def do_parts_cover_set(s, p):
+    for x in s:
+        if x not in p[0]:
+            if x not in p[-1]:
+                return False
+    return True
+
+def do_parts_have_nothing_extra(s, p):
+    for x in p[0]:
+        for y in p[-1]:
+            if y not in s or x not in s:
+                return False
+    return True
+
+def is_partition(s, p):
+    if do_parts_cover_set(s, p) == True:
+        if do_parts_have_nothing_extra(s, p) == True:
+            if len(s) == len(p[0] + len(p[1])):
+                return True
+    return False
+

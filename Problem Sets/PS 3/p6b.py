@@ -1,0 +1,1 @@
+((a1 and b0) and not(a0 and b1)) or (not(a1 and b0) and (a0 and b1))
